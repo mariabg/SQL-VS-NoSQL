@@ -163,7 +163,7 @@ Again, I could not find a way to define this complex queries in Cassandra, as in
 ## <a name="Discussion"></a>Discussion  
 On this last part, I will discuss the results above, along with my personal experience working on this project and my conclusion of it.  
 #### <a name="Results"></a>Results  
-First of all, I will state that this was my first time using a NoSQL distributed architecture, but I have previous experience with SQL. Also, I do not have a a lot of experience using Docker, which also brought me problems while loading the files. Whenever I tried to use Cassandra as a relational DB, which it is not, I failed, as I should implemented map-reduce.
+First of all, I will state that this was my first time using a NoSQL distributed architecture, but I have previous experience with SQL. Also, I do not have a a lot of experience using Docker, which also brought me problems while loading the files. Whenever I tried to use Cassandra as a relational DB, which it is not, I failed, as I should implemented map-reduce<sup>10</sup>.
 I found very costly building the NoSQL, even taking into account that I did not find the right architecture to solve all the requests. What does this mean? For this specific scenario where we want to make punctual and and varied queries, it might be better to use relation database. It will be in moments where:
 - The volume of data is too big and needs to be distributed.
 - Data is too complex or different, like for big data.
