@@ -2,10 +2,10 @@
 #### TU Graz University - Knowledge Technologies Institute
 1. [Introduction](##Introduction)  
 2. [Implementation](#Implementation)  
-  2.1. [Architecture](#Architecture)  
+  2.1. [Architecture](#Architecture)    
     2.1.1. [SQL](#SQL)  
     2.1.2. [NoSQL](#NoSQL)  
-  2.2. [Methods](#Methods)  
+  2.2. [Methods](#Methods)    
     2.2.1. [Basic queries](#Basic_queries)  
     2.2.2. [Infer and correlate data](#Infer_and_correlate)  
     2.2.3. [Generate hypotheses](#hypotheses)  
