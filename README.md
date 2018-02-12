@@ -1,18 +1,18 @@
 # SQL VS NoSQL: A hands-on Comparison of two Architectures.
 #### TU Graz University - Knowledge Technologies Institute
-1. [Introduction](##Introduction)
-2. [Implementation](#Implementation)
-  1. [Architecture](#Architecture)
-    1. [SQL](#SQL)
-    2. [NoSQL](#NoSQL)
-  2. [Methods](#Methods)
-    1. [Basic queries](#Basic_queries)
-    2. [Infer and correlate data](#Infer_and_correlate)
-    3. [Generate hypotheses](#hypotheses)
-3. [Discussion](#Discussion)
-  1. [Results](#Results)
-  2. [Conclusion](#Conclusion)
-4. [Appendix](#Appendix)
+1. [Introduction](##Introduction)  
+2. [Implementation](#Implementation)  
+  2.1. [Architecture](#Architecture)  
+    2.1.1. [SQL](#SQL)  
+    2.1.2. [NoSQL](#NoSQL)  
+  2.2. [Methods](#Methods)  
+    2.2.1. [Basic queries](#Basic_queries)  
+    2.2.2. [Infer and correlate data](#Infer_and_correlate)  
+    2.2.3. [Generate hypotheses](#hypotheses)  
+3. [Discussion](#Discussion)  
+  3.1. [Results](#Results)  
+  3.2. [Conclusion](#Conclusion)  
+4. [Appendix](#Appendix)  
 
 ## <a name="Introduction"></a>Introduction
 When facing a new challenge regarding databases, probably the most important part is to decide the best architecture. Depending on the approach, not only the data will be store differently, but also the requests, the properties and the performance will change.
