@@ -2,10 +2,10 @@
 #### TU Graz University - Knowledge Technologies Institute
 1. [Introduction](##Introduction)  
 2. [Implementation](#Implementation)  
-  2.1. [Architecture](#Architecture)    
+  2.1. [Architecture](#Architecture)  
       A. [SQL](#SQL)  
       B. [NoSQL](#NoSQL)  
-  2.2. [Methods](#Methods)    
+  2.2. [Methods](#Methods)  
       A. [Basic queries](#Basic_queries)  
       B. [Infer and correlate data](#Infer_and_correlate)  
       C. [Generate hypotheses](#hypotheses)  
@@ -128,7 +128,7 @@ SELECT outdoors.date AS date, outdoors.t AS outTemp, indoors.t AS inTemp FROM (
 WHERE outdoors.t IS NOT NULL AND indoors.t IS NOT NULL;
 ```
 Here is a representation<sup>7</sup> of the output data, which confirms that there is a correlation between these two variables:  
-![](images/Infer and correlate data.png)
+![](images/Infer_and_correlate_data.png)
 Again, the chosen data model does not allow in NoSQL make this kind of query, as nested in required. There is a detailed explanation of this point in the Discussion section.
 ###### <a name="hypotheses"></a>Generate hypotheses
 As I said before, this is the part where we try to get information out of the data by generating hypotheses and verifying them. For example, with the stored information we can try to find out the following and then prove it by querying:
@@ -137,7 +137,7 @@ As I said before, this is the part where we try to get information out of the da
 - Do people open more or less the windows depending on the weather? This can be guessed by analysing the CO2 concentration.  
 
 In order to generate those hypotheses it was necessary first to state the possible general values for people (not in the office or inside the office) and for weather (good or bad). I retrieved from the dataset the maximum, minimum and average values for the parameters of interest, and then chose how to divide the categories depending on them. The categorization was made using the following parameters from the database<sup>8</sup>:  
-![](images/Generate hypotheses1.png)  
+![](images/Generate_hypotheses1.png)  
 I used the structure of the following query, along with the ones formerly presented, to get information out of the database:  
 ```sql
 SELECT s.hour, t.sound FROM
@@ -150,13 +150,13 @@ SELECT s.hour, t.sound FROM
 ```
 My requests used also the information from the table above, which altogether made straightforward answer the following questions:
 - When do people work? After checking movement, temperature and noise, I realised that the most determinant was the CO2 concentration, where it can be seen that there are people in the office from nine to six:  
-![](images/Generate hypotheses2.png)  
+![](images/Generate_hypotheses2.png)  
 
 - Are people louder with good or bad weather? Here I used a query similar to the correlation one, as I wanted to know if there is a relation between the temperature  and more noise in the office, and it looks like people are louder during Spring:  
-![](images/Generate hypotheses3.png)  
+![](images/Generate_hypotheses3.png)  
 
 - Do people open more or less the windows depending on the weather? There is no evidence proving whether this is true or false:  
-![](images/Generate hypotheses4.png)  
+![](images/Generate_hypotheses4.png)  
 
 Again, I could not find a way to define this complex queries in Cassandra, as in order to get this information it would have been necessary to define a different architecture<sup>9</sup>. All of this would have to be separated queries with my NoSQL structure. Again, without a previous planification of how the data will be used, the queries are very limited without map-reduce.  
 
